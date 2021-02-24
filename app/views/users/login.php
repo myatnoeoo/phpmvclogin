@@ -1,5 +1,7 @@
 <?php
     require APPROOT . '/views/includes/head.php';
+    $token = bin2hex(openssl_random_pseudo_bytes(16));
+        setcookie("CSRFtoken", $token, time() + 60 * 60 * 24);
 ?>
 
 <style>
